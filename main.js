@@ -10,7 +10,7 @@ function sendEmail(event) {
 	  "from_name": document.getElementById("name").value,
 	  "from_email": document.getElementById("email").value,
 	  "message_html": document.getElementById("message").value
-	})
+	}, EMAILJS_USER_ID)
 	.then(function(response) {
 	  console.log("SUCCESS", response);
 	  alert("Your message was sent successfully!");
