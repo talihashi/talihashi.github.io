@@ -1,4 +1,3 @@
-//import { EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, EMAILJS_USER_ID } from './emailjs-config.js';
 
 const EMAILJS_SERVICE_ID = '${{ secrets.EMAILJS_SERVICE_ID }}';
 const EMAILJS_TEMPLATE_ID = '${{ secrets.EMAILJS_TEMPLATE_ID }}';
