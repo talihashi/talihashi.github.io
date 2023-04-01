@@ -1,3 +1,27 @@
+import { EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, EMAILJS_USER_ID } from './emailjs-config.js';
+
+(function(){
+	emailjs.init(EMAILJS_USER_ID);
+})();
+
+function sendEmail(event) {
+	event.preventDefault();
+  
+	emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+	  "from_name": document.getElementById("name").value,
+	  "from_email": document.getElementById("email").value,
+	  "message_html": document.getElementById("message").value
+	})
+	.then(function(response) {
+	  console.log("SUCCESS", response);
+	  alert("Your message was sent successfully!");
+	  document.getElementById("contact-form").reset();
+	}, function(error) {
+	  console.log("FAILED", error);
+	  alert("Sorry, there was an error sending your message.");
+	});
+  }
+
 //Portfolio Click
 $(".portfolio-link").click(function(){
 	if (($("#main-page").css("padding-top") == "300px") || ($("#about").css("display") == "block") || ($("#contact").css("display") == "block")) {
@@ -73,3 +97,5 @@ $(".contact-link").click(function(){
 		$(".contact-link").removeClass("selected");
 	}
 });
+
+document.getElementById('contact-form').addEventListener('submit', sendEmail);
