@@ -2,7 +2,7 @@
 // const EMAILJS_SERVICE_ID = '${{ secrets.EMAILJS_SERVICE_ID }}';
 // const EMAILJS_TEMPLATE_ID = '${{ secrets.EMAILJS_TEMPLATE_ID }}';
 // const EMAILJS_USER_ID = '${{ secrets.EMAILJS_USER_ID }}';
-// emailjs.init(EMAILJS_USER_ID);
+emailjs.init("hpAa2pGmynJXhLPFa");
 
 function sendEmail(event) {
 	event.preventDefault();
@@ -11,7 +11,7 @@ function sendEmail(event) {
 	  "from_name": document.getElementById("name").value,
 	  "from_email": document.getElementById("email").value,
 	  "message_html": document.getElementById("message").value
-	})
+	}, "hpAa2pGmynJXhLPFa")
 	.then(function(response) {
 	  console.log("SUCCESS", response);
 	  alert("Your message was sent successfully!");
