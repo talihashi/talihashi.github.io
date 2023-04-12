@@ -1,17 +1,17 @@
 // import { EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, EMAILJS_USER_ID } from './emailjs-config.js';
-const EMAILJS_SERVICE_ID = '${{ secrets.EMAILJS_SERVICE_ID }}';
-const EMAILJS_TEMPLATE_ID = '${{ secrets.EMAILJS_TEMPLATE_ID }}';
-const EMAILJS_USER_ID = '${{ secrets.EMAILJS_USER_ID }}';
+// const EMAILJS_SERVICE_ID = '${{ secrets.EMAILJS_SERVICE_ID }}';
+// const EMAILJS_TEMPLATE_ID = '${{ secrets.EMAILJS_TEMPLATE_ID }}';
+// const EMAILJS_USER_ID = '${{ secrets.EMAILJS_USER_ID }}';
 emailjs.init(EMAILJS_USER_ID);
 
 function sendEmail(event) {
 	event.preventDefault();
   
-	emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+	emailjs.send("service_49c1rkq", "template_a6r8h0n", {
 	  "from_name": document.getElementById("name").value,
 	  "from_email": document.getElementById("email").value,
 	  "message_html": document.getElementById("message").value
-	}, EMAILJS_USER_ID)
+	})
 	.then(function(response) {
 	  console.log("SUCCESS", response);
 	  alert("Your message was sent successfully!");
