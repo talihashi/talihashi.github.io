@@ -1,7 +1,7 @@
 // import { EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, EMAILJS_USER_ID } from './emailjs-config.js';
-const EMAILJS_SERVICE_ID = '${{ process.env.EMAILJS_SERVICE_ID }}';
-const EMAILJS_TEMPLATE_ID = '${{ process.env.EMAILJS_TEMPLATE_ID }}';
-const EMAILJS_USER_ID = '${{ process.env.EMAILJS_USER_ID }}';
+const EMAILJS_SERVICE_ID = ${{ secrets.EMAILJS_SERVICE_ID }};
+const EMAILJS_TEMPLATE_ID = ${{ secrets.EMAILJS_TEMPLATE_ID }};
+const EMAILJS_USER_ID = ${{ secrets.EMAILJS_USER_ID }};
 emailjs.init(EMAILJS_USER_ID);
 
 function sendEmail(event) {
